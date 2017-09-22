@@ -13,8 +13,8 @@ router.get("/", function(req, res){
 });
 
 router.post("/", function(req, res){
-    burger.createOne([
-        "burger_name", "devoured"
+    burger.insertOne([
+        "burger_name", " devoured"
     ],[
         req.body.burger_name, req.body.devoured
     ], function(){
@@ -34,7 +34,7 @@ router.put("/:id", function(req, res){
 
 router.delete("/:id", function(req, res){
     var condition = "id = " + req.params.id;
-    burgers.delete(condition, function(){
+    burger.delete(condition, function(){
         res.redirect("/");
     });
 });
